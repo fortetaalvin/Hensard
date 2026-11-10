@@ -1,0 +1,38 @@
+[project]
+name = "university-erp"
+version = "0.1.0"
+description = "A university ERP built module by module in Agentic Software Engineering"
+requires-python = ">=3.11"
+dependencies = ["flask>=3.0", "pyyaml>=6"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["erp*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.sql", "templates/*.html", "*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "erp/modules"]
+markers = ["acceptance: an executable requirement from a module's spec/"]
+norecursedirs = [".*", "_template", "*.egg-info", "build"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "S", "UP"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+".claude/hooks/*" = ["S603", "S607"]
+"evals/*" = ["S602", "S603", "S607"]
+".github/scripts/*" = ["S603", "S607"]
+"erp/core/seed.py" = ["S311"]

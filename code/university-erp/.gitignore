@@ -1,0 +1,14 @@
+.env
+.env.*
+secrets/
+*.gguf
+models/
+__pycache__/
+*.egg-info/
+.venv/
+reports/
+.pytest_cache/
+.ruff_cache/
+
+erp.db
+*.db

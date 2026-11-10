@@ -1,0 +1,2 @@
+-- Tables for this module only, every name prefixed with the module name, e.g. registration_requests.
+-- Reference core tables by key (matric_no, staff_no, courses.code); never alter core tables.

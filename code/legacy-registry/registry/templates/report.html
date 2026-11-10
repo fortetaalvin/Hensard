@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block body %}
+<table><tr><th>Kind</th><th>Requests</th><th>Fees (₦)</th></tr>{% for r in rows %}<tr><td>{{ r.kind }}</td><td>{{ r.n }}</td><td>{{ r.total }}</td></tr>{% endfor %}
+<tr><th>Total</th><th></th><th>{{ grand }}</th></tr></table>
+{% endblock %}

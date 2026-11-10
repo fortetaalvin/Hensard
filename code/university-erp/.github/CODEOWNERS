@@ -1,0 +1,17 @@
+# Each team owns its module folder. Replace the team slugs once teams exist (Settings -> Teams in the organisation).
+# With branch protection's "Require review from Code Owners", only the owning team can approve changes to its module.
+*                                   @ORG_NAME/instructors
+/erp/core/                          @ORG_NAME/instructors
+/docs/integration-contracts.md      @ORG_NAME/instructors
+/institution.yaml                   @ORG_NAME/instructors
+/.github/                           @ORG_NAME/instructors
+/erp/modules/registration/          @ORG_NAME/trainees
+/erp/modules/admissions/            @ORG_NAME/team-admissions
+/erp/modules/fees/                  @ORG_NAME/team-fees
+/erp/modules/results/               @ORG_NAME/team-results
+/erp/modules/records/               @ORG_NAME/team-records
+/erp/modules/hostels/               @ORG_NAME/team-hostels
+/erp/modules/hr/                    @ORG_NAME/team-hr
+/erp/modules/payroll/               @ORG_NAME/team-payroll
+/erp/modules/library/               @ORG_NAME/team-library
+/erp/modules/timetable/             @ORG_NAME/team-timetable

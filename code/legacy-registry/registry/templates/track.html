@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block body %}
+<form><input name="ref" value="{{ ref }}" placeholder="REQ-2026-1234"><button>Track</button></form>
+{% if r %}<p>{{ r.kind|capitalize }} × {{ r.copies }} — <b>{{ r.status }}</b> (submitted {{ r.created }})</p>
+{% elif ref %}<p>No request found.</p>{% endif %}
+{% endblock %}

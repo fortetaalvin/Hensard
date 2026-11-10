@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block body %}
+<p>Signed in with roles: {{ roles|join(", ") }}</p>
+<h2>Modules in this deployment</h2>
+<ul>{% for m in modules %}<li><a href="/{{ m }}/">{{ m|replace("_", " ")|title }}</a></li>{% else %}<li>None enabled yet.</li>{% endfor %}</ul>
+{% endblock %}

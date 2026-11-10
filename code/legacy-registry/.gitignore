@@ -1,0 +1,5 @@
+registry/registry.db
+__pycache__/
+*.egg-info/
+.venv/
+.env

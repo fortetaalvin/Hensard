@@ -1,0 +1,19 @@
+name: Security finding
+description: A threat from the threat model or a red-team finding (no live secrets here; use a private advisory for anything exploitable)
+labels: ["security"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      multiple: true
+      options: ["ASI01 Goal hijack", "ASI02 Tool misuse", "ASI03 Identity and privilege", "ASI04 Supply chain", "ASI05 Unexpected code execution", "ASI06 Memory and context poisoning", "ASI07 Inter-agent communication", "ASI08 Cascading failures", "ASI09 Human-agent trust", "ASI10 Rogue agent", "STRIDE: Spoofing", "STRIDE: Tampering", "STRIDE: Repudiation", "STRIDE: Information disclosure", "STRIDE: Denial of service", "STRIDE: Elevation of privilege"]
+    validations: { required: true }
+  - type: textarea
+    id: entry
+    attributes: { label: Entry point and data flow }
+    validations: { required: true }
+  - type: textarea
+    id: control
+    attributes: { label: Proposed control, description: "Or 'accept', with who signs the acceptance" }
+    validations: { required: true }

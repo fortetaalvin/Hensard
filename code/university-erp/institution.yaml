@@ -1,0 +1,38 @@
+# Your institution. Week 1: replace the placeholders with your own university's real structure.
+# Structure only: names of faculties, departments and programmes are public information.
+# NEVER put real student or staff data in this file or anywhere in the repository; seed data is synthetic.
+name: "Your University"
+short_name: "YU"
+city: "Your City"
+timezone: "Africa/Lagos"
+email_domain: "example.edu.ng"   # use a reserved/example domain in development
+matric_format: "YU/{year}/{dept}/{serial:04d}"
+staff_no_format: "YU/SP/{serial:05d}"
+grading:                          # 5-point scale used by most Nigerian universities; confirm yours
+  - {min: 70, grade: A, point: 5}
+  - {min: 60, grade: B, point: 4}
+  - {min: 50, grade: C, point: 3}
+  - {min: 45, grade: D, point: 2}
+  - {min: 40, grade: E, point: 1}
+  - {min: 0,  grade: F, point: 0}
+credit_load: {min: 15, max: 24}   # per semester; confirm with your Senate regulations
+sessions:
+  current: "2026/2027"
+  semesters: ["First", "Second"]
+faculties:
+  - name: "Faculty of Science"
+    code: "SCI"
+    departments:
+      - {name: "Computer Science", code: "CSC", programmes: ["B.Sc. Computer Science"]}
+      - {name: "Mathematics", code: "MTH", programmes: ["B.Sc. Mathematics"]}
+  - name: "Faculty of Management Sciences"
+    code: "MGS"
+    departments:
+      - {name: "Accounting", code: "ACC", programmes: ["B.Sc. Accounting"]}
+      - {name: "Business Administration", code: "BUS", programmes: ["B.Sc. Business Administration"]}
+  - name: "Faculty of Arts"
+    code: "ART"
+    departments:
+      - {name: "English and Literary Studies", code: "ENG", programmes: ["B.A. English"]}
+# Modules switched on in this deployment. The class builds `registration`; each team adds its own.
+modules: ["registration"]

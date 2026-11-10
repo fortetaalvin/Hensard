@@ -1,0 +1,15 @@
+name: PR evidence
+# Fails a pull request whose description lacks a transcript, an autonomy level, a token budget,
+# or the "what the agent got wrong" section. No transcript, no submission.
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+permissions: { contents: read }
+jobs:
+  check:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the PR description
+        run: python3 .github/scripts/check_pr_evidence.py "$GITHUB_EVENT_PATH"

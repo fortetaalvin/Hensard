@@ -1,0 +1,16 @@
+name: Spec ambiguity
+description: A place where the spec could be read two ways (week 4 ambiguity hunt and after)
+labels: ["spec", "ambiguity"]
+body:
+  - type: input
+    id: where
+    attributes: { label: File and line in spec/ }
+    validations: { required: true }
+  - type: textarea
+    id: readings
+    attributes: { label: The two readings }
+    validations: { required: true }
+  - type: textarea
+    id: question
+    attributes: { label: Question for the client }
+    validations: { required: true }

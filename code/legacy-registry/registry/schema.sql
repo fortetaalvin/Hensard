@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS requests;
+CREATE TABLE requests (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  ref TEXT UNIQUE NOT NULL,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  matric TEXT NOT NULL,
+  kind TEXT NOT NULL,
+  copies INTEGER NOT NULL,
+  express INTEGER NOT NULL DEFAULT 0,
+  fee REAL NOT NULL,
+  status TEXT NOT NULL,
+  notes TEXT,
+  created TEXT NOT NULL
+);

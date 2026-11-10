@@ -1,0 +1,15 @@
+name: CodeQL
+# Week 7: code scanning. Results appear in the repository's Security tab.
+on:
+  push: { branches: [main] }
+  pull_request:
+  schedule: [{ cron: "17 3 * * 1" }]
+permissions: { contents: read, security-events: write, actions: read }
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with: { languages: python }
+      - uses: github/codeql-action/analyze@v3

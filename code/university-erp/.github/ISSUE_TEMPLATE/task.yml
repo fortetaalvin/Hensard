@@ -1,0 +1,19 @@
+name: Agent task
+description: A unit of work for an agent, before a task file is written
+labels: ["task"]
+body:
+  - type: textarea
+    id: goal
+    attributes: { label: Goal, description: "What must be true when this is done? Name the acceptance test(s)." }
+    validations: { required: true }
+  - type: dropdown
+    id: autonomy
+    attributes: { label: Proposed autonomy level, options: ["L0 · Suggest", "L1 · Draft for review", "L2 · Act, then report", "L3 · Unattended within gates"] }
+    validations: { required: true }
+  - type: input
+    id: budget
+    attributes: { label: Token budget, placeholder: "e.g. 150k" }
+    validations: { required: true }
+  - type: textarea
+    id: risks
+    attributes: { label: What could go wrong, description: "Which files, interfaces or data could this touch?" }
